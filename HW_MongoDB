@@ -5,17 +5,17 @@ db.getCollection('students').find({avgScore: 4.2})
 
 2) Знайди всіх дітей з 1 класу
 
-
+db.getCollection('students').find({class : 1.0})
 -------------------------------------------------------
 
 3) Знайти всіх дітей які вивчають фізику
 
-
+db.getCollection('students').find({lessons: "physics"})
 -------------------------------------------------------
 
 4) Знайти всіх дітей, батьки яких працюють в науці ( scientist )
 
-
+db.getCollection('students').find({"parents.profession": "scientist" })
 -------------------------------------------------------
 
 5) Знайти дітей, в яких середня оцінка більша за 4

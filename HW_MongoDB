@@ -26,7 +26,7 @@ db.getCollection('students').find({"avgScore" : {$gt: 4}})
 6) Знайти найкращого учня
 
 db.getCollection('students')
-    .find({"avgScore" : {$gt: 4}})
+    .find({})
     .sort ({"avgScore" : -1})
     .limit(1)
 -------------------------------------------------------
@@ -34,7 +34,7 @@ db.getCollection('students')
 7) Знайти найгіршого учня
 
 db.getCollection('students')
-    .find({"avgScore" : {$lt: 3}})
+    .find({})
     .sort ({"avgScore" : 1})
     .limit(1)
 -------------------------------------------------------
@@ -42,7 +42,7 @@ db.getCollection('students')
 8) Знайти топ 3 учнів
 
 db.getCollection('students')
-    .find({"avgScore" : {$gt: 4}})
+    .find({})
     .sort ({"avgScore" : -1})
     .limit(3)
 -------------------------------------------------------
@@ -88,5 +88,10 @@ db.getCollection('students')
 -------------------------------------------------------
 
 17) Знайти дітей які вчаться в початковій школі (до 5 класу) і вивчають фізику ( physics )
+
+db.getCollection('students')
+    .find({class: {$lte : 5}, lessons: "physics"})
+-------------------------------------------------------
+18) Знайти найуспішніший клас
 
 

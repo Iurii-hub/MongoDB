@@ -64,7 +64,8 @@ db.getCollection('students')
 
 12) Знайти дітей з не повною сімєю
 
-
+db.getCollection('students')
+    .find({ parents : {$not : {$size : 2}} })
 -------------------------------------------------------
   
 13) Знайти батьків які не працюють
@@ -92,6 +93,7 @@ db.getCollection('students')
 db.getCollection('students')
     .find({class: {$lte : 5}, lessons: "physics"})
 -------------------------------------------------------
+
 18) Знайти найуспішніший клас
 
 

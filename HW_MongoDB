@@ -20,22 +20,31 @@ db.getCollection('students').find({"parents.profession": "scientist" })
 
 5) Знайти дітей, в яких середня оцінка більша за 4
 
-
+db.getCollection('students').find({"avgScore" : {$gt: 4}})
 -------------------------------------------------------
 
 6) Знайти найкращого учня
 
-
+db.getCollection('students')
+    .find({"avgScore" : {$gt: 4}})
+    .sort ({"avgScore" : -1})
+    .limit(1)
 -------------------------------------------------------
 
 7) Знайти найгіршого учня
 
-
+db.getCollection('students')
+    .find({"avgScore" : {$lt: 3}})
+    .sort ({"avgScore" : 1})
+    .limit(1)
 -------------------------------------------------------
 
 8) Знайти топ 3 учнів
 
-
+db.getCollection('students')
+    .find({"avgScore" : {$gt: 4}})
+    .sort ({"avgScore" : -1})
+    .limit(3)
 -------------------------------------------------------
 
 9) Знайти середній бал по школі

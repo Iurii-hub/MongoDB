@@ -66,7 +66,7 @@ db.getCollection('students').aggregate([
       }  
     }
 ])
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 /* 1 */
 {
     "_id" : null,
@@ -76,20 +76,20 @@ db.getCollection('students').aggregate([
 
 db.getCollection('students').aggregate([
     {$group: {
-        "_id": null,
+        "_id": 0,
          overallAvgScore: {
              $avg: "$avgScore"
          }
       }  
     },
     {$project: {
-        _id: null}
+        "_id": 0}
     }
 ])
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 /* 1 */
 {
-    "_id" : null
+    "overallAvgScore" : 3.85307692307692
 }
 -------------------------------------------------------
 -------------------------------------------------------

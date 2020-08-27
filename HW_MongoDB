@@ -125,7 +125,13 @@ db.getCollection('students')
 
 14) Не працюючих батьків влаштувати офіціантами
 
-
+db.getCollection('students').update(
+    {$and: [
+        {parents: {$ne: null}},
+        {"parents.profession": null}
+        ]},
+    {$set: {"parents.$[].profession": "waiter"}},
+    {multi: true})
 -------------------------------------------------------
 -------------------------------------------------------
 
